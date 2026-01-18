@@ -65,7 +65,7 @@ class Controller:
         self._view.txt_risultato.controls.append(ft.Text(f"Cammino migliore:"))
         for prod in best_path:
             self._view.txt_risultato.controls.append(ft.Text(f"{prod.product_name}"))
-        self._view.txt_risultato.controls.append(ft.Text(f"Score: {best_score}:"))
+        self._view.txt_risultato.controls.append(ft.Text(f"Score: {best_score}"))
         self._view.update()
 
     def populate_dd_category(self):

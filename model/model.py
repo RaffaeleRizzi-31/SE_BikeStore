@@ -66,9 +66,12 @@ class Model:
 
     def ricorsione_percorso(self, parziale, visitati, score_corrente):
         
-        if self.vincolo_lunghezza <= len(parziale) and parziale[-1] == self.vincolo_fine and score_corrente > self.best_score:
-            self.best_score = score_corrente
-            self.best_path = list(parziale)
+        if self.vincolo_lunghezza == len(parziale):
+            if parziale[-1] == self.vincolo_fine:
+                if score_corrente > self.best_score:
+                    self.best_score = score_corrente
+                    self.best_path = list(parziale)
+            return
 
         for arco_out in self.G.out_edges(parziale[-1]):
             if arco_out[1].id in visitati:
